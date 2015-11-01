@@ -12,7 +12,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -33,7 +32,7 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+
     }
 
     /**
@@ -44,6 +43,7 @@ public class LoginServlet extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
+    
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -51,18 +51,19 @@ public class LoginServlet extends HttpServlet {
         System.out.println(user);
         String password = request.getParameter("password");
         System.out.println(password);
-        
+
         try {
             LoginDAO login = new LoginDAO();
-            login.selecionarLogin(user, password);
-            response.sendRedirect("../Sport_Fitness/html/Home.html");
+            boolean verdade = login.read(user, password);
+            if (verdade) {
+                response.sendRedirect("html/Home.html");
+            } else {
+                //chamar erro
+            }
         } catch (Exception error) {
             System.out.println(error);
         }
-        
-        
     }
-
     /**
      * Returns a short description of the servlet.
      *

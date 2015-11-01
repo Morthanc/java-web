@@ -76,3 +76,58 @@ input#inputBusca{
     cursor: pointer;
     color: black;
 }
+
+#location{
+    display: block;
+    position: absolute;
+    top: 170px;
+    z-index: -10;
+}
+
+#choice{
+    margin: 10px 50px 10px 80px;
+}
+
+#choice-wrapper{
+    position: static;
+    left: 0px;
+    right: 0px;
+    margin: 0px;
+    text-align: left;
+}
+
+#choice ul{
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+    position: relative;
+}
+
+#choice ul li img{
+    vertical-align: middle;
+    padding-left: 5px;
+    margin: 0px;
+}
+#choice ul li{
+    display: inline-block;
+    text-align: center;
+    font-size: 15pt;
+}
+
+#choice ul li:hover{
+    background-color: #93f7fd;
+}
+
+#choice ul li a,visited{
+    color: #ccc;
+    display: block;
+    padding: 15px;
+    padding-left:51px;
+    padding-right: 51px;
+    text-decoration: none;
+}
+
+#choice ul li a:hover{
+    color: #ccc;
+    text-decoration: none;
+}
