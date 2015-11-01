@@ -58,6 +58,7 @@ public class LoginServlet extends HttpServlet {
             LoginDAO login = new LoginDAO();
             login.selecionarLogin(user, password);
             response.sendRedirect("../html/Home.html");
+            response.sendRedirect("Home.html");
         } catch (Exception error) {
             JOptionPane.showMessageDialog(null,error);
             System.out.println(error);
