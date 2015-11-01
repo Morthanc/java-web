@@ -27,7 +27,7 @@ public class Conexao {
             System.out.println(e.getMessage());
         } catch (ClassNotFoundException e) {
             System.out.println(e.getMessage());
-        } catch (Exception e) {
+        } catch (InstantiationException | IllegalAccessException e) {
             System.out.println(e.getMessage());
         }
 

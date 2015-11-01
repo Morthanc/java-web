@@ -48,19 +48,15 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String user = request.getParameter("username");
-        JOptionPane.showMessageDialog(null,user);
         System.out.println(user);
         String password = request.getParameter("password");
-        JOptionPane.showMessageDialog(null,password);
         System.out.println(password);
         
         try {
             LoginDAO login = new LoginDAO();
             login.selecionarLogin(user, password);
-            response.sendRedirect("../html/Home.html");
-            response.sendRedirect("Home.html");
+            response.sendRedirect("../Sport_Fitness/html/Home.html");
         } catch (Exception error) {
-            JOptionPane.showMessageDialog(null,error);
             System.out.println(error);
         }
         
