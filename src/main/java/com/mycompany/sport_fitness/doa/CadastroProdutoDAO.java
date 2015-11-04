@@ -9,6 +9,6 @@ package com.mycompany.sport_fitness.doa;
  *
  * @author heito
  */
-public class CadastroProdutoDAO {
+public class CadastroProdutoDAO extends Conexao {
     
 }
