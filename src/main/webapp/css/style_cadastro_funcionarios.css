@@ -1,6 +1,6 @@
 html{
     margin:0px;
-    background: url("../img/Site_04.jpg") no-repeat;
+    background: url("../img/Site_04.jpg") no-repeat fixed;
     background-size: cover; 
     position:relative;
     width: 100%;

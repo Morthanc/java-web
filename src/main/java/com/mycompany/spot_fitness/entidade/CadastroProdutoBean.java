@@ -7,15 +7,34 @@ package com.mycompany.spot_fitness.entidade;
 
 /**
  *
- * @author heito
+ * @author heitor
  */
 public class CadastroProdutoBean {
+
+    // dados principais
+
+    private int codigo;
     private String nome;
+    private String categoria;
     private String infoComplementar;
+    private String fabricante;
+    private String fornecedor;
     private double altura;
     private double largura;
     private double profundidade;
-    private double valor;
+    // financeiro
+    private double valorCompra;
+    private double valorVenda;
+    private double lucro;
+    // 
+
+    public int getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
+    }
 
     public String getNome() {
         return nome;
@@ -25,12 +44,36 @@ public class CadastroProdutoBean {
         this.nome = nome;
     }
 
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }
+
     public String getInfoComplementar() {
         return infoComplementar;
     }
 
     public void setInfoComplementar(String infoComplementar) {
         this.infoComplementar = infoComplementar;
+    }
+
+    public String getFabricante() {
+        return fabricante;
+    }
+
+    public void setFabricante(String fabricante) {
+        this.fabricante = fabricante;
+    }
+
+    public String getFornecedor() {
+        return fornecedor;
+    }
+
+    public void setFornecedor(String fornecedor) {
+        this.fornecedor = fornecedor;
     }
 
     public double getAltura() {
@@ -57,13 +100,28 @@ public class CadastroProdutoBean {
         this.profundidade = profundidade;
     }
 
-    public double getValor() {
-        return valor;
+    public double getValorCompra() {
+        return valorCompra;
     }
 
-    public void setValor(double valor) {
-        this.valor = valor;
+    public void setValorCompra(double valorCompra) {
+        this.valorCompra = valorCompra;
     }
 
-    
+    public double getValorVenda() {
+        return valorVenda;
+    }
+
+    public void setValorVenda(double valorVenda) {
+        this.valorVenda = valorVenda;
+    }
+
+    public double getLucro() {
+        return lucro;
+    }
+
+    public void setLucro(double lucro) {
+        this.lucro = lucro;
+    }
+
 }

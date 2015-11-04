@@ -5,9 +5,6 @@
  */
 package com.mycompany.spot_fitness.entidade;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 
 /**
  *
