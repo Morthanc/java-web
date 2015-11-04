@@ -20,11 +20,7 @@ public class CadastroFuncionarioDAO extends Conexao{
     private Connection con = null;
     private ResultSet rs = null;
     private PreparedStatement pst = null;
-    
-    
-    
-            
-    
+
      public void create(CadastroFuncionarioBean user) {
         String sql = "INSERT INTO Usuarios(x,x) value(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
@@ -33,30 +29,29 @@ public class CadastroFuncionarioDAO extends Conexao{
             pst = con.prepareStatement(sql);
             
             //dados pessoais
-            pst.setString(1, user.getNomeFuncionario());
-            pst.setObject(2, user.getDataNascimento());
+            pst.setString(1, user.getNome());
+            pst.setDate(2, user.getNascimento());
             pst.setObject(3, user.getSexo());
             
             //documentos
             pst.setString(4, user.getRg());
-            pst.setString(5, user.getOrgaoEmissor());
-            pst.setString(6, user.getLocalEmissao());
+            pst.setString(5, user.getEmissor());
+            pst.setDate(6, user.getEmissao());
             pst.setString(7, user.getCpf());
             
             
             //naturalização
-            pst.setString(8, user.getPaisOrigem());
+            pst.setString(8, user.getPais());
             pst.setString(9, user.getCidade());
             pst.setString(10, user.getEstado());
             
             //endereço
             pst.setString(11, user.getRua());
-            pst.setString(12, user.getNumero());
-            pst.setString(13, user.getBairro());
-            pst.setString(14, user.getCep());
-            pst.setString(15, user.getComplemento());
-            pst.setString(16, user.getTelefone());
-            pst.setString(17, user.getCelular());
+            pst.setInt(12, user.getNumero());
+            pst.setString(13, user.getCep());
+            pst.setString(14, user.getComplemento());
+            pst.setString(15, user.getTelefone());
+            pst.setString(16, user.getCelular());
             
 
             pst.executeQuery();
