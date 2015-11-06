@@ -6,7 +6,9 @@
 package com.mycompany.spot_fitness.servlet;
 
 import com.mycompany.sport_fitness.doa.CadastroEmpresaDAO;
+import com.mycompany.spot_fitness.entidade.CadastroEmpresaBean;
 import java.io.IOException;
+import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -67,6 +69,7 @@ public class EmpresaServlet extends HttpServlet {
         System.out.println(logradouro);
         
         String numero = request.getParameter("numero");
+        int num = Integer.parseInt(numero);
         System.out.println(numero);
         
         String complemento = request.getParameter("complemento");
@@ -95,7 +98,38 @@ public class EmpresaServlet extends HttpServlet {
         
         
         try {
-            CadastroEmpresaDAO cadastroEmpresa = new CadastroEmpresaDAO();
+            CadastroEmpresaBean cadastroEmpresa = new CadastroEmpresaBean();
+            
+            cadastroEmpresa.setCnpj(cnpj);
+            cadastroEmpresa.setCei(cei);
+            cadastroEmpresa.setRazaoSocial(razaoSocial);
+            cadastroEmpresa.setNomeFantasia(nomeFantasia);
+            cadastroEmpresa.setGerenteResponsavel(gerenteResponsavel);
+            cadastroEmpresa.setLogradouro(logradouro);
+            cadastroEmpresa.setNumero(num);
+            cadastroEmpresa.setComplemento(complemento);
+            cadastroEmpresa.setBairro(bairro);
+            cadastroEmpresa.setCep(cep);
+            cadastroEmpresa.setCidade(cidade);
+            cadastroEmpresa.setEstado(estado);
+            cadastroEmpresa.setTelefone(telefone);
+            cadastroEmpresa.setCelular(celular);
+            cadastroEmpresa.setEmail(email);
+            
+            CadastroEmpresaDAO empresaDAO = new CadastroEmpresaDAO();
+            String resultado = empresaDAO.create(cadastroEmpresa);
+            
+            if (resultado.equals("sucesso")){
+                response.sendRedirect("html/Home.html");
+            }
+            else{
+                PrintWriter out = response.getWriter();
+                out.print("<html>");
+                out.print("<h2>Não foi possível realizar o cadastro</h2>");
+                out.print("<br>");
+                out.print("<a href='html/Home.html'>Voltar</a>");
+                out.print("</html>");
+            }
             
         } catch (Exception error) {
             System.out.println(error);

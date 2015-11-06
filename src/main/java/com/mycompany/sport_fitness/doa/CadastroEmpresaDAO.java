@@ -20,8 +20,9 @@ public class CadastroEmpresaDAO extends Conexao{
     private Connection con = null;
     private ResultSet rs = null;
     private PreparedStatement pst = null;
+    public String retorno="erro";
 
-     public void create(CadastroEmpresaBean empresa) {
+     public String create(CadastroEmpresaBean empresa) {
         String sql = "INSERT INTO Funcionarios(cnpj, cei, razaoSocial, nomeFantasia, gerenteResponsavel, "
                 + "logradouro, numero, complemento, bairro, cep, cidade, estado, telefone, "
                 + "celular, email) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
@@ -49,10 +50,13 @@ public class CadastroEmpresaDAO extends Conexao{
             
 
             rs = pst.executeQuery();
+            retorno = "sucesso";
             con.close();
+
         } catch (SQLException | ClassNotFoundException error) {
             System.out.println(error);
         }
+        return retorno;
     }
      
      public void read(CadastroEmpresaBean empresa){
