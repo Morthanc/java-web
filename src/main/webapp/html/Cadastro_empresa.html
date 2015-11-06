@@ -22,36 +22,31 @@ and open the template in the editor.
                     <p class="financeiro"><b>Dados principais</b></p>
                     <div>
                         <label for="cnpj">CNPJ:</label>
-                        <input type="text" placeholder="Ex: 00.000.000/0001-00"  id="id" name="id" size="25" maxlength="19"/>
+                        <input type="text" placeholder="Ex: 00.000.000/0001-00"  id="cnpj" name="cnpj" size="25" maxlength="19"/>
                         <label for="cei">CEI:</label>
-                        <input type="text" name="cei" size="25" maxlength="19"/>
+                        <input type="text" name="cei" id="cei" size="25" maxlength="19"/>
                     </div>
                     <div>
                         <label for="social">Razão social:</label>
-                        <input type="text" placeholder="Ex: Sport-Fitness LTDA."  id="social"  size="53"/>
+                        <input type="text" placeholder="Ex: Sport-Fitness LTDA."  id="razaoSocial" name="razaoSocial" size="53"/>
 
                     </div>
                     <div>
                         <label for="fantasia">Nome Fantasia:</label>
-                        <input type="text" placeholder="Ex: Sport Fitness"  id="fantasia" size="50"/>
+                        <input type="text" placeholder="Ex: Sport Fitness"  id="nomeFantasia" name="nomeFantasia" size="50"/>
 
                     </div>
                     <div>
                         <label for="gerente">Gerente/Responsavel da empresa:</label>
-                        <input type="text" placeholder="Ex: Roberto Silva"  id="gerente" size="50"/>
+                        <input type="text" placeholder="Ex: Roberto Silva"  id="gerenteResponsavel" name="gerenteResponsavel" size="50"/>
 
                     </div>
                     <hr/>
                     <p class="financeiro"><b>Endereço</b></p>
                     <div>
-                        <label for="logadouro">Logadouro</label>
-                        <select name="logadouro">
-                            <option>Rua</option>
-                            <option>Avenida</option>
-                            <option>Viela</option>
-                            <option>Outros</option>
-                        </select>
-                        <input type="text" id="endereco" name="endereco" size="30"/>
+                        <label for="logadouro">Logradouro</label>
+                       
+                        <input type="text" id="logradouro" name="logradouro" size="30"/>
                         <label for="numero">&nbsp;Número:</label>
                         <input type="text" id="numero" name="numero" size="7"/>
                     </div>
@@ -63,13 +58,13 @@ and open the template in the editor.
                         <label for="bairro">Bairro:</label>
                         <input type="text" placeholder="Ex: Jardins"  id="bairro" name="bairro" size="45"/>
                         <label for="bairro">&nbsp;CEP:</label>
-                        <input type="text" placeholder="Ex: 00000-000"  id="bairro" name="cep" size="11" maxlength="9"/>
+                        <input type="text" placeholder="Ex: 00000-000"  id="cep" name="cep" size="11" maxlength="9"/>
                     </div>
                     <div>
                         <label for="Cidade">Cidade:</label>
                         <input type="text" placeholder="Ex: São Paulo"  id="cidade" name="cidade" size="44"/>
                         <label for="Cidade">&nbsp;Estado:</label>
-                        <select name="estado">
+                        <select name="estado" id="estado">
                             <option>SP</option>
                             <option>RJ</option>
                             <option>BA</option>
